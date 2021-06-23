@@ -7,7 +7,12 @@ const Drawer = createDrawerNavigator();
 
 const DrawerNavigator = () => {
     return (
-        <Drawer.Navigator>
+        <Drawer.Navigator        
+            drawerStyle={{
+                backgroundColor: 'lightpink',
+                width: 240,
+            }}
+        >
             <Drawer.Screen name="Home" component={TabNavigator} />
             <Drawer.Screen name="Profile" component={Profile} />
         </Drawer.Navigator>

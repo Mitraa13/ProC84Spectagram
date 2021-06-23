@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-export default class Feed extends Component {
+export default class CreatePost extends Component {
     render() {
         return (
             <View
                 style={styles.container}>
-
+                
                 <Text style={styles.textMsg}>Sorry but this page is not updated yet :( Kindly check out the upcoming versions of this app</Text>
             </View>
         )
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         alignItems: "center",
-        backgroundColor:"lavender",
+        backgroundColor:"pink",
         justifyContent:"center",
     },
     textMsg:{
