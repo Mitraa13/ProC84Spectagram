@@ -1,42 +1,42 @@
 [
     {
         "author": "Jenny",
-        "image" : "image_1.jpg",
+        "image" : "https://raw.githubusercontent.com/Mitraa13/ProC82Spectagram/master/assets/image_1.jpg",
         "description": "Working out 🦾🦾"
     },
     {
         "author": "David",
-        "image" : "image_2.jpg",
+        "image" : "https://raw.githubusercontent.com/Mitraa13/ProC82Spectagram/master/assets/image_2.jpg",
         "description": "Tried new combination 🍽🍽"
     },
     {
         "author": "Louis",
-        "image" : "image_3.jpg",
+        "image" : "https://raw.githubusercontent.com/Mitraa13/ProC82Spectagram/master/assets/image_3.jpg",
         "description": "Yummy 🍴🍴"
     },
     {
         "author": "Adam",
-        "image" : "image_4.jpg",
+        "image" : "https://raw.githubusercontent.com/Mitraa13/ProC82Spectagram/master/assets/image_4.jpg",
         "description": "Spots with nature 🧡🧡"
     },
     {
         "author": "Jason",
-        "image" : "image_5.jpg",
+        "image" : "https://raw.githubusercontent.com/Mitraa13/ProC82Spectagram/master/assets/image_5.jpg",
         "description": "Cycling with bros near the mounts 🚵‍♀️🚵‍♂️"
     },
     {
-        "author": "Sam",
-        "image" : "image_6.jpg",
+        "author": "Tony",
+        "image" : "https://raw.githubusercontent.com/Mitraa13/ProC82Spectagram/master/assets/image_6.jpg",
         "description": "With Nature's beauty 🌄🌄"
     },
     {
-        "author": "Tony",
-        "image" : "image_7.jpg",
+        "author": "Sam",
+        "image" : "https://raw.githubusercontent.com/Mitraa13/ProC82Spectagram/master/assets/image_7.jpg",
         "description": "Nature, my love 😍😍"
     },
     {
         "author": "Chris",
-        "image" : "post.jpeg",
+        "image" : "https://raw.githubusercontent.com/Mitraa13/ProC82Spectagram/master/assets/post.jpeg",
         "description": "My new Art work 💖💖"
     }
 ]

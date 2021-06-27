@@ -6,7 +6,8 @@ import {
   SafeAreaView,
   Platform,
   StatusBar,
-  Image
+  Image,
+  ImageBackground,
 } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import PostCard from "./PostCard";
@@ -51,24 +52,29 @@ export default class Feed extends Component {
       return (
         <View style={styles.container}>
           <SafeAreaView style={styles.droidSafeArea} />
-          <View style={styles.appTitle}>
-            <View style={styles.appIcon}>
-              <Image
-                source={require("../assets/logo.png")}
-                style={styles.iconImage}
-              />
-            </View>
-            <View style={styles.appTitleTextContainer}>
-              <Text style={styles.appTitleText}>Spectagram</Text>
-            </View>
-          </View>
-          <View style={styles.cardContainer}>
-            <FlatList
-              keyExtractor={this.keyExtractor}
-              data={posts}
-              renderItem={this.renderItem}
-            />
-          </View>
+              <ImageBackground 
+              source={require('../assets/cloud.png')}
+              style={styles.backgroundImage}
+              >
+                <View style={styles.appTitle}>
+                  <View style={styles.appIcon}>
+                    <Image
+                      source={require("../assets/logo.png")}
+                      style={styles.iconImage}
+                    />
+                  </View>
+                  <View style={styles.appTitleTextContainer}>
+                    <Text style={styles.appTitleText}>Spectagram</Text>
+                  </View>
+                </View>
+                <View style={styles.cardContainer}>
+                  <FlatList
+                    keyExtractor={this.keyExtractor}
+                    data={posts}
+                    renderItem={this.renderItem}
+                  />
+                </View>
+              </ImageBackground>
         </View>
       );
     }
@@ -79,6 +85,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#15193c"
+  },
+  backgroundImage: {
+      flex: 1,
+      resizeMode: 'cover',
   },
   droidSafeArea: {
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight : RFValue(35)

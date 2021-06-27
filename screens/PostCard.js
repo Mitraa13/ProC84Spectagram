@@ -60,7 +60,7 @@ export default class PostCard extends Component {
             </View>
 
                 <Image
-                source={require('../assets/'+this.props.story.image)}
+                source={{uri: this.props.story.image}}
                 style={styles.postImage}
                 />
 
@@ -111,37 +111,42 @@ const styles = StyleSheet.create({
   },
   profileicon: {
     width: "30%",
-    height: "300%",
-    resizeMode: "contain",
+    height: "500%",
+    resizeMode: "contain", 
+    marginTop:20,
   },
   postAuthorTextContainer: {
     flex: 0.7,
     justifyContent: "center",
+    padding:1,
   },
   postAuthorText: {
-    fontSize: RFValue(20),
+    fontSize: RFValue(25),
     fontFamily: "Bubblegum-Sans",
-    color: "white",
+    color: "white", 
+    marginLeft:-60,   
     marginTop:20,
-    
   },
   postImage: {
     resizeMode: "contain",
     width: "95%",
     alignSelf: "center",
     height: RFValue(250),
-    marginTop:30,
+    marginTop:25,
+    marginLeft:10,
   },
   postDescription: {
     fontFamily: "Bubblegum-Sans",
-    fontSize: RFValue(14),
+    fontSize: RFValue(18),
     color: "white",
-    paddingTop: RFValue(10)
+    paddingTop: RFValue(10),
+    paddingLeft:10,
   },
   actionContainer: {
     justifyContent: "center",
     alignItems: "center",
-    padding: RFValue(10)
+    padding: RFValue(10),
+    marginBottom:20,
   }, 
   likeButton: { 
     width: RFValue(160), 
