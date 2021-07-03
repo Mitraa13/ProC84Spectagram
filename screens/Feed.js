@@ -20,7 +20,7 @@ let customFonts = {
   "Bubblegum-Sans": require("../assets/fonts/BubblegumSans-Regular.ttf")
 };
 
-let posts = require("./temp_stories.json");
+let story = require("./temp_stories.json");
 
 export default class Feed extends Component {
   constructor(props) {
@@ -40,7 +40,7 @@ export default class Feed extends Component {
   }
 
   renderItem = ({ item: story }) => {
-    return <PostCard story={story} />;
+    return <PostCard story={story} navigation={this.props.navigation} />;
   };
 
   keyExtractor = (item, index) => index.toString();
@@ -70,7 +70,7 @@ export default class Feed extends Component {
                 <View style={styles.cardContainer}>
                   <FlatList
                     keyExtractor={this.keyExtractor}
-                    data={posts}
+                    data={story}
                     renderItem={this.renderItem}
                   />
                 </View>
@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   iconImage: {
-    width: "100%",
-    height: "100%",
+    width: RFValue(50),
+    height: RFValue(50),
     resizeMode: "contain"
   },
   appTitleTextContainer: {

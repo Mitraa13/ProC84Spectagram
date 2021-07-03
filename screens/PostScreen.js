@@ -18,7 +18,7 @@ let customFonts = {
   "Bubblegum-Sans": require("../assets/fonts/BubblegumSans-Regular.ttf")
 };
 
-export default class PostCard extends Component {
+export default class PostScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,47 +42,54 @@ export default class PostCard extends Component {
       return (
         <View style={styles.container}>
         <SafeAreaView style={styles.droidSafeArea}/>
-          <TouchableOpacity style={styles.cardContainer}
-            onPress={()=>
-              this.props.navigation.navigate('Post',{story: this.props.story})
-            }
-          >
+            <View style={styles.appTitleContainer}>
+                <View style={styles.appIcon}>
+                <Image
+                    source={require("../assets/logo.png")}
+                    style={styles.iconImage}
+                />
+                </View>
+                <View style={styles.appTitleTextContainer}>
+                <Text style={styles.appTitleText}>Spectagram</Text>
+                </View>
+            </View>
+          <View style={styles.cardContainer}>
             <View style={styles.titleContainer}>
 
-              <View style={styles.appTitle}>
+                <View style={styles.appTitle}>
 
-                <View style={styles.profileContainer}>
-                  <Image
-                    source={require("../assets/profile_img.png")}
-                    style={styles.profileicon}
-                  />
+                    <View style={styles.profileContainer}>
+                    <Image
+                        source={require("../assets/profile_img.png")}
+                        style={styles.profileicon}
+                    />
+                    </View>
+
+                    <View style={styles.postAuthorTextContainer}>
+                    <Text style={styles.postAuthorText}>{this.props.route.params.story.author}</Text>
+                    </View>
+
                 </View>
-
-                <View style={styles.postAuthorTextContainer}>
-                  <Text style={styles.postAuthorText}>{this.props.story.author}</Text>
-                </View>
-
-            </View>
 
                 <Image
-                source={{uri: this.props.story.image}}
+                source={{uri: this.props.route.params.story.image}}
                 style={styles.postImage}
                 />
 
                 <Text style={styles.postDescription}>
-                    {this.props.story.description}
+                    {this.props.route.params.story.description}
                 </Text>
 
             </View>
 
-            <View style={styles.actionContainer}>
+            <TouchableOpacity style={styles.actionContainer}>
               <View style={styles.likeButton}>
                 <Ionicons name={"heart"} size={RFValue(30)} color={"white"} />
                 <Text style={styles.likeText}>12k</Text>
               </View>
-            </View>
+            </TouchableOpacity>
             
-          </TouchableOpacity>
+          </View>
         </View>
       );
     }
@@ -90,16 +97,18 @@ export default class PostCard extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
+    container: {
+      flex: 1,
+      backgroundColor: "#15193c"
+    },
   droidSafeArea: {
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight : RFValue(35)
   },
   cardContainer: {
     margin: RFValue(13),
     backgroundColor: "#2f345d",
-    borderRadius: RFValue(20)
+    borderRadius: RFValue(20),
+    marginTop:RFValue(20)
   },
   titleContainer: {
     paddingLeft: RFValue(20),
@@ -109,6 +118,30 @@ const styles = StyleSheet.create({
     flex: 0.1,
     flexDirection: "row",
     justifyContent:"center"
+  },
+  appTitleContainer: {
+    flex: 0.07,
+    flexDirection: "row"
+  },
+  appIcon: {
+    flex: 0.3,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  iconImage: {
+    width: RFValue(50),
+    height: RFValue(50),
+    resizeMode: "contain"
+  },
+  appTitleTextContainer: {
+    flex: 0.7,
+    justifyContent: "center",
+  },
+  appTitleText: {
+    color: "white",
+    fontSize: RFValue(28),
+    fontFamily: "Bubblegum-Sans",
+    textAlign:"justify",
   },
   profileContainer: {
     flex: 0.3,
@@ -130,15 +163,15 @@ const styles = StyleSheet.create({
     fontSize: RFValue(25),
     fontFamily: "Bubblegum-Sans",
     color: "white", 
-    marginLeft:RFValue(-60),   
-    marginTop:RFValue(20),
+    marginLeft:-60,   
+    marginTop:20,
   },
   postImage: {
     resizeMode: "contain",
     width: "95%",
     alignSelf: "center",
     height: RFValue(250),
-    marginTop:RFValue(25),
+    marginTop:RFValue(20),
     marginLeft:RFValue(10),
   },
   postDescription: {
@@ -146,7 +179,7 @@ const styles = StyleSheet.create({
     fontSize: RFValue(18),
     color: "white",
     paddingTop: RFValue(10),
-    paddingLeft:RFValue(10),
+    paddingLeft:10,
   },
   actionContainer: {
     justifyContent: "center",
